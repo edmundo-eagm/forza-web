@@ -1,13 +1,25 @@
-<mat-form-field appearance="outline">
-  <mat-label>Código</mat-label>
-  <input matInput placeholder="Placeholder">
-</mat-form-field>
-<mat-form-field appearance="outline">
-  <mat-label>Descripción</mat-label>
-  <input matInput placeholder="Placeholder">
-</mat-form-field>
-<mat-form-field appearance="outline">
-  <mat-label>Precio</mat-label>
-  <input matInput type="number" class="example-right-align" placeholder="0" />
-  <span matTextPrefix>Q&nbsp;</span>
-</mat-form-field>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Código</mat-label>
+    <input [(ngModel)]="code" matInput placeholder="Placeholder">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Descripción</mat-label>
+    <input [(ngModel)]="description" matInput placeholder="Placeholder">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Precio</mat-label>
+    <input [(ngModel)]="price" matInput type="number" class="example-right-align" placeholder="0" />
+    <span matTextPrefix>Q&nbsp;</span>
+  </mat-form-field>
+</p>
+<p>
+  <button matButton="outlined" (click)="save()">Guardar</button>
+</p>
+<p>
+  <button matButton="outlined" (click)="cancel()">Cancelar</button>
+</p>
