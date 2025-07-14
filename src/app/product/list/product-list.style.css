@@ -1,3 +1,44 @@
-table {
+.product-list {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.styled-table {
   width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mat-header-cell {
+  background-color: #f3f3f3;
+  font-weight: 600;
+}
+
+.mat-cell,
+.mat-header-cell {
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+.mat-row:hover {
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
 }

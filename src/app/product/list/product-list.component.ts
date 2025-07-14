@@ -33,9 +33,14 @@ export class ProductListComponent {
 
   edit(id: number) {
     console.log(id);
-    this.router.navigate(['/products/'+id]);
+    this.router.navigate(['/products/' + id]);
   }
-  delete(id: number) { }
+  delete(id: number) {
+    this.productService.delete(id).subscribe((data) => {
+      const foundIndex = this.dataSource.findIndex((i) => i.id == id);
+      if (foundIndex != -1) this.dataSource.splice(foundIndex, 1)
+    });
+  }
   create() {
     this.router.navigate(['/products/new']);
   }

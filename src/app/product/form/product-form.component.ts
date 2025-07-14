@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'product-form',
   templateUrl: './product-form.template.html',
+  styleUrl: './product-form.style.scss',
   imports: [MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule, FormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
