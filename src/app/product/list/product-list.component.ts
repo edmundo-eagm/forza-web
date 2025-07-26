@@ -40,8 +40,8 @@ export class ProductListComponent {
   }
   delete(id: number) {
     this.productService.delete(id).subscribe((data) => {
-      const foundIndex = this.dataSource.findIndex((i) => i.id == id);
-      if (foundIndex != -1) this.dataSource.splice(foundIndex, 1)
+      this.dataSource = this.dataSource.filter((i) => i.id != id);
+      this.cdRef.detectChanges();
     });
   }
 
