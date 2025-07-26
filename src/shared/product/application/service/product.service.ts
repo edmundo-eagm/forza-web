@@ -1,5 +1,4 @@
-import { Injectable, signal } from '@angular/core';
-import { tap } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { ProductInterface } from '../../domain/interface/product.interface';
 import { ProductCreateInterface } from '../../domain/interface/product-create.interface';
 import { ProductUpdateInterface } from '../../domain/interface/product-update.interface';
@@ -9,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class ProductService {
-    private baseUrl = 'https://probable-carnival-69pqwgjgxx5wf4gv4-5001.app.github.dev/api/product';
+    private baseUrl = 'https://probable-carnival-69pqwgjgxx5wf4gv4-5000.app.github.dev/Product';
 
 
     constructor(
@@ -21,7 +20,7 @@ export class ProductService {
     }
 
     getOne(id: number) {
-        return this.http.get<ProductInterface>(this.baseUrl+'/'+id);
+        return this.http.get<ProductInterface>(this.baseUrl + '/' + id);
     }
 
     create(product: ProductCreateInterface) {

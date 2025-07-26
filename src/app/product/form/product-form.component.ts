@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -24,6 +24,7 @@ export class ProductFormComponent {
     private router: Router,
     public productService: ProductService,
     private route: ActivatedRoute,
+    private cdRef:ChangeDetectorRef,
   ) { }
   save() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -51,9 +52,10 @@ export class ProductFormComponent {
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id != 'new')
       this.productService.getOne(Number(id)).subscribe((data) => {
-        this.code = data.code;
-        this.description = data.description;
-        this.price = data.price.toString();
-      });
+      this.code = data.code;
+      this.description = data.description;
+      this.price = data.price.toString();
+      this.cdRef.detectChanges();
+  });
   }
 }
