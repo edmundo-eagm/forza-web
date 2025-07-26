@@ -10,7 +10,7 @@
     "test": "ng test",
     "serve:ssr:forza-web": "node dist/forza-web/server/server.mjs",
     "build:android": "npm run build && (rm -rf ./android || echo \"eliminado\") && npx cap add android && npx cap run android",
-    "build:ios": "npm run build && (rm -rf ./ios || echo \"eliminado\") && npx cap add android && npx cap run android"
+    "build:ios": "npm run build && (rm -rf ./ios || echo \"eliminado\") && npx cap add ios && open ios/App/App.xcworkspace"
   },
   "prettier": {
     "overrides": [
