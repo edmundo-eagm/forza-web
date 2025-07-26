@@ -52,10 +52,10 @@ export class ProductFormComponent {
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id != 'new')
       this.productService.getOne(Number(id)).subscribe((data) => {
+      this.code = data.code;
+      this.description = data.description;
+      this.price = data.price.toString();
       this.cdRef.detectChanges();
-        this.code = data.code;
-        this.description = data.description;
-        this.price = data.price.toString();
-      });
+  });
   }
 }
