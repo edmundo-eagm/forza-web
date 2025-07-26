@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "compile": "ng build",
+    "build": "npm run compile && (rm -rf ./www || echo \"eliminado\") && mkdir ./www && cp -rf dist/forza-web/browser/* ./www/ && mv ./www/index.csr.html ./www/index.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:forza-web": "node dist/forza-web/server/server.mjs"
+    "serve:ssr:forza-web": "node dist/forza-web/server/server.mjs",
+    "build:android": "npm run build && (rm -rf ./android || echo \"eliminado\") && npx cap add android && npx cap run android"
   },
   "prettier": {
     "overrides": [
